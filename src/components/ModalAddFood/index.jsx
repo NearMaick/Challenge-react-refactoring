@@ -5,6 +5,8 @@ import { Form } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
 
+
+// TODO testar botão 'Novo prato
 class ModalAddFood extends Component {
   constructor(props) {
     super(props);

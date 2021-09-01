@@ -4,7 +4,7 @@ import { FiPlusSquare } from 'react-icons/fi';
 import { Container } from './styles';
 import Logo from '../../assets/logo.svg';
 
-class Header extends Component {
+class Header extends Component { 
   render() {
     const { openModal } = this.props;
 
