@@ -86,7 +86,7 @@ async function handleUpdateFood(food: FoodProps) {
   
     return (
       <>
-        <Header />
+        <Header openModal={toggleModal} />
         <ModalAddFood
           isOpen={modalOpen}
           setIsOpen={toggleModal}
