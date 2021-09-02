@@ -76,7 +76,6 @@ async function handleUpdateFood(food: FoodProps) {
   }
 
   function toggleEditModal () {
-    console.log('test')
     setEditModalOpen(!editModalOpen);
   }
 

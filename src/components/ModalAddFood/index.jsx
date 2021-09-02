@@ -7,6 +7,7 @@ import Input from '../Input';
 
 
 // TODO testar botão 'Novo prato
+// TODO revisar useRef
 class ModalAddFood extends Component {
   constructor(props) {
     super(props);
