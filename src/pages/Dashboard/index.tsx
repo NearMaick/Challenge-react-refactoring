@@ -18,7 +18,7 @@ interface FoodProps {
 export function Dashboard () {
   const [foods, setFoods] = useState<FoodProps[]>([])
   const [editingFood, setEditingFood] = useState({})
-  const [modalOpen, setModalOpen] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
   const [editModalOpen, setEditModalOpen] = useState(false)
 
   useEffect(() => {
@@ -28,25 +28,8 @@ export function Dashboard () {
     }
 
     fetchFoodsData()
-  }, [])
+  }, []) 
 
-  
-  // constructor(props) {
-    //   super(props);
-    //   this.state = {
-      //     foods: [],
-      //     editingFood: {},
-      //     modalOpen: false,
-      //     editModalOpen: false,
-      //   }
-      // }
-      
-      // async componentDidMount() {
-        //   const response = await api.get('/foods');
-        
-        //   this.setState({ foods: response.data });
-        // }
-        
         // TODO
   async function handleAddFood (food: any) {    
     try {
@@ -80,15 +63,13 @@ export function Dashboard () {
   //   }
   // }
 
-  // handleDeleteFood = async id => {
-  //   const { foods } = this.state;
+  async function handleDeleteFood (id: number) {
+    await api.delete(`/foods/${id}`);
 
-  //   await api.delete(`/foods/${id}`);
+    const foodsFiltered = foods.filter(food => food.id !== id);
 
-  //   const foodsFiltered = foods.filter(food => food.id !== id);
-
-  //   this.setState({ foods: foodsFiltered });
-  // }
+    setFoods(foodsFiltered);
+  }
 
   function toggleModal () {
     console.log('test')
@@ -127,7 +108,7 @@ export function Dashboard () {
               <Food
                 key={food.id}
                 food={food}
-                // handleDelete={this.handleDeleteFood}
+                handleDelete={() => {handleDeleteFood(food.id)}}
                 // handleEditFood={this.handleEditFood}
               />
             ))}
