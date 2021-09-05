@@ -16,7 +16,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   Icon ?: IconType
 }
 
-const Input = ({ name, Icon, ...rest }: InputProps) => {
+export function Input ({ name, Icon, ...rest }: InputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);
@@ -56,5 +56,3 @@ const Input = ({ name, Icon, ...rest }: InputProps) => {
     </Container>
   );
 };
-
-export default Input;

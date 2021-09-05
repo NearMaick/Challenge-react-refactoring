@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import { Container } from './styles';
-import api from '../../services/api';
+import { api } from '../../services/api';
 import { FoodType } from '../../types/FoodTypes';
 
 type FoodProps = {
@@ -79,5 +79,3 @@ export function Food ({ food, handleEditFood, handleDelete }: FoodProps) {
       </Container>
     );
 };
-
-export default Food;

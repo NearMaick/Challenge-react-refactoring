@@ -3,7 +3,7 @@ import { FiCheckSquare } from 'react-icons/fi';
 
 import { Form } from './styles';
 import { Modal } from '../Modal';
-import Input from '../Input';
+import { Input } from '../Input';
 import { FoodBasicType } from '../../types/FoodTypes';
 interface ModalUpdateFoodProps {
   isOpen: boolean,
@@ -47,5 +47,3 @@ export function ModalEditFood ({ isOpen, setIsOpen, editingFood , handleUpdateFo
     );
   
 };
-
-export default ModalEditFood;

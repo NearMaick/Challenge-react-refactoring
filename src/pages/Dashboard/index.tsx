@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
-import api from '../../services/api';
+import { api } from '../../services/api';
 
 import { FoodType, FoodBasicType } from '../../types/FoodTypes';
 
 import { Header }from '../../components/Header';
-import Food from '../../components/Food';
-import ModalAddFood from '../../components/ModalAddFood';
-import ModalEditFood from '../../components/ModalEditFood';
+import { Food } from '../../components/Food';
+import { ModalAddFood } from '../../components/ModalAddFood';
+import { ModalEditFood } from '../../components/ModalEditFood';
 
 import { FoodsContainer } from './styles';
 
@@ -105,6 +105,5 @@ async function handleUpdateFood(food: FoodBasicType) {
             ))}
         </FoodsContainer>
       </>
-    );
-  
+    );  
 };
