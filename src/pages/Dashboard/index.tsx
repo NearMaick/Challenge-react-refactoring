@@ -1,17 +1,15 @@
-import Header from '../../components/Header';
+import { useState, useEffect } from 'react';
+
 import api from '../../services/api';
+
+import { FoodProps } from '../../types/FoodTypes';
+
+import { Header }from '../../components/Header';
 import Food from '../../components/Food';
 import ModalAddFood from '../../components/ModalAddFood';
 import ModalEditFood from '../../components/ModalEditFood';
-import { FoodsContainer } from './styles';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
-interface FoodProps {
-  id: number
-  name: string
-  description: string
-}
+import { FoodsContainer } from './styles';
 
 export function Dashboard () {
   const [foods, setFoods] = useState<FoodProps[]>([])
