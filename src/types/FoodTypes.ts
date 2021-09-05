@@ -1,5 +1,5 @@
 
-export type FoodProps = {
+export type FoodBasicType = {
   id: number
   name: string
   description: string
